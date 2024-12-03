@@ -1,0 +1,15 @@
+﻿﻿@{
+    ViewData["Title"] = "QA about dogs";
+}
+
+<form asp-action="AskQuestion" method="post">
+    <label for="question">Ask a question about dogs or just have a chitchat:</label>
+    <input type="text" id="question" name="question" required />
+    <input type="submit" value="Ask" />
+</form>
+
+@if (ViewBag.Question != null)
+{
+    <h3>Q: @ViewBag.Question</h3>
+    <p>A: @ViewBag.Answer</p>
+}
